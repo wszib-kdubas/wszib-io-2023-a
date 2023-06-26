@@ -30,11 +30,20 @@ class Trojkaty {
      * @param {float} c - Długość trzeciego boku.
      */
     
+ optymalizcja-2
 
 
 
 
 
+
+    public static boolean czyIstniejeTrojkat(float a, float b, float c){
+                  if (a + b <= c) return false;
+                  if (a + c <= b) return false;
+                  if (b + c <= a) return false;
+                  return true;
+		  }
+ main
     public static void jakiTrojkat(float a, float b, float c){
          if (a == b && b == c && a == c) {
              System.out.println("Trójkąt równoboczny");
@@ -46,6 +55,17 @@ class Trojkaty {
          if (a == b || b == c || a == c) {
              System.out.println("Trójkąt równoramienny");
          }
+    
+         if (czyProstokatny(a, b, c)) {
+             System.out.println("Trójkąt prostokątny");
+         }
+    }
+
+    public static boolean czyProstokatny(float a, float b, float c){
+                   if (a * a + b * b == c*c) return true;
+                   if (b * b + c * c == a*a) return true;
+                   if (a * a + c * c == b*b) return true;
+                   return false;
     }
     /** Wyświetla ekran pomocy */
     public static void pomoc(){
@@ -53,8 +73,9 @@ class Trojkaty {
         System.out.println("Program do rozpoznawania rodzaju trójkąta");
         System.out.println("Uruchom z trzema argumentami liczbowymi - długość boków trójkąta");
     }
-    /** Glowna funkcja */
+        /** Glowna funkcja */
     public static void main(String... args) {
+ optymalizcja-2
         /**
                 * Główna funkcja programu.
                 * @param {float} a - Długość pierwszego boku.
@@ -70,6 +91,12 @@ class Trojkaty {
                    }
 
 
+
+        if (!czyIstniejeTrojkat(a, b, c)) {
+                    System.out.println("Z podanych długości boków nie da się zbudować trójkąta");
+                    System.exit(3);
+        }
+ main
 	if (args.length != 3) {
             pomoc();
             System.exit(1);
