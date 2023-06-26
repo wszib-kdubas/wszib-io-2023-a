@@ -20,6 +20,17 @@ class Trojkaty {
          if (a == b || b == c || a == c) {
              System.out.println("Trójkąt równoramienny");
          }
+    
+         if (czyProstokatny(a, b, c)) {
+             System.out.println("Trójkąt prostokątny");
+         }
+    }
+
+    public static boolean czyProstokatny(float a, float b, float c){
+                   if (a * a + b * b == c*c) return true;
+                   if (b * b + c * c == a*a) return true;
+                   if (a * a + c * c == b*b) return true;
+                   return false;
     }
     /** Wyświetla ekran pomocy */
     public static void pomoc(){
